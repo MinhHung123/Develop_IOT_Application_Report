@@ -1,0 +1,385 @@
+\documentclass[12pt,a4paper]{article}
+
+%--- font và tiếng Việt ---
+\usepackage[utf8]{inputenc}
+\usepackage[T5]{fontenc}
+\usepackage[vietnamese]{babel}
+
+\addto\captionsvietnamese{%
+  \renewcommand{\figurename}{Hình}%
+  \renewcommand{\tablename}{Bảng}%   
+}
+
+%\usepackage[T1]{fontenc}      % better font encoding
+\usepackage{textgreek}        % allows \textmu etc.
+\DeclareUnicodeCharacter{03BC}{\ensuremath{\mu}}     % maps U+03BC → \mu
+\DeclareUnicodeCharacter{0307}{\d{}}                  % maps dot‑below accent
+\DeclareUnicodeCharacter{0304}{\=}
+\DeclareUnicodeCharacter{0303}{\~}
+
+%--- công thức toán học ---
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{enumitem} % Gói này giúp tùy chỉnh danh sách
+
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{skins,breakable}
+
+% Hộp chung cho code hoặc hình, tự co giãn
+\newtcolorbox{flexbox}{
+  enhanced,
+  language=R,
+  breakable,                % cho phép xuống trang mới nếu nội dung dài
+  colback=blue!10!white,    % nền nhạt
+  colframe=blue!60!black,   % viền đậm
+  arc=4pt,                  % bo góc
+  boxrule=0.8pt,            % độ dày viền
+  left=4mm, right=1mm, top=1mm, bottom=1mm,  % padding
+  title=\texttt{Result},   % tiêu đề (tuỳ chỉnh)
+  fonttitle=\sffamily\bfseries,
+  coltitle=white,
+  colbacktitle=blue!60!black
+}
+
+%--- căn lề ---
+\usepackage[a4paper,left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+
+%--- chèn hình ảnh ---
+\usepackage{graphicx}
+\usepackage{float}
+
+%\usepackage{geometry}
+\usepackage{tikz} % Để vẽ khung bìa
+\usetikzlibrary{calc}
+
+\usepackage{longtable}
+\usepackage{array}
+
+% Cấu hình lề trang để bảng hiển thị rộng rãi hơn
+% \geometry{
+%  a4paper,
+%  total={170mm,257mm},
+%  left=20mm,
+%  top=20mm,
+%  bottom=20mm,
+%  right=20mm
+% }
+
+
+% Cấu hình lề trang
+%\geometry{top=2cm, bottom=2cm, left=2cm, right=2cm}
+
+% 1) Cần trong preamble:
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{listings,skins}
+
+% 2) Định nghĩa môi trường codebox
+\newtcblisting{codebox}{
+  listing only,
+  listing options={
+    language=R,
+    literate=
+    % cho phép hiển thị dấu hash trong code
+    {á}{{\'a}}1
+    {à}{{\`a}}1
+    {ả}{{\v a}}1
+    {ạ}{{\d a}}1
+    {ấ}{{\'{\^a}}}1
+    {ẩ}{{\v{\^a}}}1 
+    {ẫ}{{\~{\^a}}}1
+    {ậ}{{\d{\^a}}}1
+    {ó}{{\'o}}1
+    {ò}{{\`o}}1 
+    {ỏ}{{\v o}}1
+    {ô}{{\^o}}1
+    {ố}{{\'{\^o}}}1
+    {ổ}{{\v{\^o}}}1
+    {ỗ}{{\~{\^o}}}1
+    {ộ}{{\d{\^o}}}1
+    {ợ}{{\d{\ohorn}}}1
+    {ẽ}{{\~e}}1
+    {ệ}{{\d{\^e}}}1
+    {ế}{{\'{\^e}}}1
+    {í}{{\'i}}1
+    {ì}{{\`i}}1
+    {ỷ}{{\v y}}1
+    {ị}{{\d i}}1
+    {ứ}{{\'{\uhorn}}}1 
+    {ử}{{\v{\uhorn}}}1
+    {ữ}{{\~{\uhorn}}}1
+    {đ}{{\dj{}}}1
+    {\#}{{\#}}1,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue}\bfseries,
+    commentstyle=\color{gray}\itshape,
+    stringstyle=\color{blue},
+    showstringspaces=false,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    numbersep=5pt,
+    xleftmargin=8pt,      % <- đẩy code và số dòng vào trong "8pt"
+    breaklines=true,
+    tabsize=2
+  },
+  colback=blue!10!white,    % nền khung
+  colframe=blue!60!black,   % viền khung
+  arc=4pt,
+  boxrule=0.8pt,
+  left=4mm,                % padding bên trái của khung
+  right=1mm,
+  top=1mm,
+  bottom=1mm,
+  title=C,
+  fonttitle=\sffamily\bfseries,
+  coltitle=white,
+  colbacktitle=blue!75!black
+}
+
+\newtcblisting{result}{
+  listing only,
+  listing options={
+    language=R,
+    literate=
+    % cho phép hiển thị dấu hash trong code
+    {\#}{{\#}}1,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue}\bfseries,
+    commentstyle=\color{gray}\itshape,
+    stringstyle=\color{blue},
+    showstringspaces=false,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    numbersep=5pt,
+    xleftmargin=8pt,      % <- đẩy code và số dòng vào trong
+    breaklines=true,
+    tabsize=2
+  },
+  colback=blue!10!white,    % nền khung
+  colframe=blue!60!black,   % viền khung
+  arc=4pt,
+  boxrule=0.8pt,
+  left=4mm,                % padding bên trái của khung
+  right=1mm,
+  top=1mm,
+  bottom=1mm,
+  title=Result,
+  fonttitle=\sffamily\bfseries,
+  coltitle=white,
+  colbacktitle=blue!75!black
+}
+
+\usepackage[hidelinks]{hyperref}
+
+\usepackage{underscore}
+
+%----------------------------
+\usepackage{fancyhdr}
+\usepackage{lastpage}          % để \pageref{LastPage}
+
+
+
+% --- điều chỉnh khoảng trống ---
+\setlength{\headheight}{24pt}  % đủ cao chứa logo 1cm + 2 dòng text
+\setlength{\headsep}{12pt}     % khoảng cách rule → body
+\setlength{\footskip}{1.5cm}    % khoảng cách body → rule footer  
+
+\pagestyle{fancy}
+\fancyhf{}  % Xóa hết định dạng cũ của header và footer
+
+
+% --- 1. HEADER ---
+% Định nghĩa lại cách hiển thị tên section để có dạng "1. Opening"
+\renewcommand{\sectionmark}[1]{\markboth{\thesection.\ #1}{}}
+
+\fancyhead[L]{} % Bên trái để trống (bỏ logo)
+\fancyhead[R]{\small \leftmark} 
+\renewcommand{\headrulewidth}{0.4pt}
+
+% --- 2. FOOTER ---
+\fancyfoot[L]{%
+    % Sử dụng raisebox -0.5\height để căn giữa logo và chữ theo chiều dọc
+    % và đảm bảo nó không bị đẩy xuống quá sâu
+    \raisebox{-0.2\height}{\includegraphics[height=0.5cm]{Pictures/hcmut.png}}% 
+    \hspace{0.5em}% Khoảng cách giữa logo và chữ
+    \raisebox{-0.1\height}{%
+        \shortstack[l]{%
+            \scriptsize Develop IOT Application - CO3037
+        }%
+    }%
+}
+
+\fancyfoot[R]{\scriptsize Page \thepage/\pageref{LastPage}}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% --- Xử lý chiều cao Header/Footer để tránh warning ---
+%\setlength{\headheight}{15pt}
+%\setlength{\footskip}{1.5cm} % Quan trọng: Đẩy footer lên trên để không bị mất logo
+
+
+\begin{document}
+
+%======================
+% 1. Title page (no header/footer)
+%======================
+\thispagestyle{empty}
+
+\begin{titlepage}
+\thispagestyle{empty}
+
+% --- Khung viền (giữ lại, không phải line) ---
+\begin{tikzpicture}[remember picture, overlay]
+  \draw[line width=1.2pt]
+    ($(current page.north west) + (1.6cm,-1.6cm)$)
+    rectangle
+    ($(current page.south east) + (-1.6cm,1.6cm)$);
+\end{tikzpicture}
+
+\begin{center}
+
+%======================
+% PHẦN ĐẦU
+%======================
+\vspace*{0.6cm}
+{\Large\bfseries ĐẠI HỌC QUỐC GIA THÀNH PHỐ HCM}\\[0.25cm]
+{\Large\bfseries TRƯỜNG ĐẠI HỌC BÁCH KHOA}\\[0.25cm]
+{\large\bfseries KHOA KHOA HỌC VÀ KỸ THUẬT MÁY TÍNH}
+
+\vspace{0.8cm}
+
+%======================
+% LOGO
+%======================
+\includegraphics[width=6.5cm]{Pictures/hcmut.png}
+
+\vspace{0.8cm}
+
+%======================
+% TÊN BÁO CÁO / ĐỀ TÀI
+%======================
+{\fontsize{26pt}{32pt}\selectfont\bfseries BÁO CÁO BÀI TẬP LỚN}\\[0.4cm]
+{\fontsize{18pt}{24pt}\selectfont\bfseries PHÁT TRIỂN ỨNG DỤNG IOT}\\[0.6cm]
+
+{\fontsize{22pt}{28pt}\selectfont\bfseries}
+
+\vspace{0.8cm}
+
+%======================
+% THÔNG TIN NHÓM
+%======================
+{\Large\bfseries }
+
+\vspace{0.6cm}
+
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{} l p{10cm} @{}}
+\Large\textbf{GVHD:} & \Large  \\[0.3em]
+\Large\textbf{SVTH:} 
+                     & \Large Thạch Minh Hưng -- 2311357\\
+                     & \Large Nguyễn Lê Khôi Nguyên -- 2312366 \\
+\end{tabular}
+
+%======================
+% FOOTER
+%======================
+\vfill
+{\large }
+
+\end{center}
+\end{titlepage}
+
+
+
+
+
+
+\clearpage
+\pagenumbering{roman} % đánh số Roman: i, ii, iii,...
+\fancyfoot[R]{\small \thepage} % đánh số trang theo trang hiện tại
+
+\section*{\centering BẢNG PHÂN CÔNG CÔNG VIỆC CỦA NHÓM}
+    % --- BẢNG PHÂN CÔNG ---
+   
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{|l|c|p{7.8cm}|c|}
+        \hline
+        \textbf{Tên thành viên} & \textbf{MSSV} & \textbf{Công việc} & \textbf{Mức độ} \\
+        \hline
+        
+        Thạch Minh Hưng & 2311357 & 
+        - Lập trình Module: LCD, Buzzer. \newline
+        - Thiết kế, hiện thực giao diện LCD. \newline
+        - Viết báo cáo.
+        & 100\% \\
+
+        \hline
+        Nguyễn Lê Khôi Nguyên & 2312366 &
+        - Hiện thực chức năng thông báo. \newline
+        - Lập trình Module: LED 7 đoạn. \newline
+        - Viết báo cáo tổng hợp.
+        & 100\% \\
+        \hline
+    \end{tabular}
+\vspace{0.1pt}
+
+\renewcommand{\arraystretch}{1.4}
+\setlength{\tabcolsep}{8pt}
+
+
+
+
+
+\clearpage
+
+
+
+
+\newpage
+
+
+% ==== TRANG: LỜI CẢM ƠN ====
+\cleardoublepage % hoặc \clearpage nếu bạn không dùng tài liệu 2 mặt
+\section*{LỜI CẢM ƠN}
+
+% Nếu có hyperref, thêm dòng này để link mục lục trỏ đúng chỗ (tránh warning kiểu "destination ...")
+\phantomsection
+\addcontentsline{toc}{section}{LỜI CẢM ƠN}
+
+% Định dạng đoạn văn: không thụt đầu dòng, có khoảng cách giữa các đoạn (không cần \\)
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.6em}
+
+
+% ==== TRANG: MỤC LỤC ====
+\cleardoublepage
+\renewcommand{\contentsname}{Mục lục}
+\tableofcontents
+
+
+\newpage
+
+
+
+
+\newpage
+
+\pagenumbering{arabic} % số Arabic: 1, 2, 3,... 
+\fancyfoot[R]{\scriptsize Page \thepage/\pageref{LastPage}} 
+% 1, 2, 3,... /lastpaage
+\setlength{\parindent}{0pt} % or \noindent for each line
+\setcounter{page}{1}
+
+\input{Chapters/1_Introduction.tex}
+\input{Chapters/2_TheoryAndTools.tex}
+\input{Chapters/3_SystemDesign.tex}
+\input{Chapters/4_SystemImplementation.tex}
+\input{Chapters/5_Testing.tex}
+\input{Chapters/6_ConclusionAndDiscussion.tex}
+
+
+\newpage
+\section*{TÀI LIỆU THAM KHẢO}
+
+\end{document}  
