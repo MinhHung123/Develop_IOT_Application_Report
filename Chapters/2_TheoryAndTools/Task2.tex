@@ -1,0 +1,168 @@
+\subsection{Task 2: Điều Khiển LED NeoPixel Dựa Trên Độ Ẩm}
+
+\subsubsection{Cảm biến DHT20 so với các cảm biến khác}
+
+Trong phần này, cảm biến DHT20 được phân tích dựa trên kết quả thực nghiệm trong buồng khí hậu với dải nhiệt độ từ $10$ đến $+40^{\circ}C$ và độ ẩm từ $0$ đến $90\%$. Kết quả cho thấy DHT20 là một lựa chọn tối ưu cho các hệ thống giám sát môi trường nhờ sự kết hợp giữa độ chính xác và tiết kiệm năng lượng.
+
+\paragraph{Độ chính xác đo lường Nhiệt độ và Độ ẩm}
+
+Dựa trên các chỉ số thống kê như hệ số xác định ($R^2$) và sai số bình phương trung bình ($RMSE$), hiệu suất của DHT20 được so sánh cụ thể như sau:
+
+\textbf{Về đo lường Nhiệt độ ($T_a$):}
+DHT20 đạt kết quả tốt nhất trong số tất cả các cảm biến giá rẻ được thử nghiệm (bao gồm DHT22, SHTC3, BME680, SHT85, SCD30 và DHT11). Cảm biến này có độ tuyến tính lý tưởng với $R^2 = 0.9999$. Sai số $RMSE$ của DHT20 đạt mức thấp nhất là $0.1836$, vượt qua cả DHT22 ($RMSE = 0.2127$) và vượt trội hoàn toàn so với DHT11 ($RMSE = 1.8981$).
+
+\textbf{Về đo lường Độ ẩm tương đối ($RH$):}
+DHT20 cho kết quả tương quan tốt với $R^2 = 0.9951$ và $RMSE = 2.7351$. Mặc dù DHT22 có hiệu suất đo độ ẩm nhỉnh hơn ($RMSE = 1.7396$), DHT20 vẫn được đánh giá cao về tính ổn định trong suốt 10 chu kỳ thử nghiệm. Một điểm lưu ý là DHT20 có thể gặp khó khăn nhất định khi bám sát các giá trị tham chiếu ở mức độ ẩm cực thấp hoặc cực cao.
+
+\paragraph{Mức tiêu thụ năng lượng}
+
+Tiêu thụ điện năng là một yếu tố then chốt cho các thiết bị IoT hoạt động bằng pin. DHT20 thể hiện ưu thế rõ rệt so với các thế hệ cũ:
+
+\begin{itemize}
+    \item \textbf{Công suất tiêu thụ:} DHT20 có mức tiêu thụ điện năng tối đa chỉ $4.9\text{ mW}$.
+    \item \textbf{Dòng điện hoạt động:} Dòng điện cung cấp tối đa của DHT20 là $0.98\text{ mA}$ (tại điện áp $5\text{ V}$).
+    \item \textbf{So sánh:} Chỉ số này thấp hơn đáng kể so với DHT11 ($12.5\text{ mW}$) và DHT22 ($7.5\text{ mW}$), giúp kéo dài thời gian vận hành của hệ thống.
+\end{itemize}
+
+\paragraph{Bảng tổng hợp các thông số thực nghiệm}
+
+Dưới đây là bảng so sánh các chỉ số đo lường chính giữa DHT20 và hai dòng cảm biến phổ biến cùng họ:
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|c|c|c|}
+        \hline
+        \textbf{Chỉ số đánh giá} & \textbf{DHT11} & \textbf{DHT22} & \textbf{DHT20} \\
+        \hline
+        Sai số Nhiệt độ ($RMSE$) & $1.8981$ & $0.2127$ & $0.1836$ (Tốt nhất) \\
+        \hline
+        Hệ số xác định Nhiệt độ ($R^2$) & $0.9839$ & $0.9999$ & $0.9999$ \\
+        \hline
+        Sai số Độ ẩm ($RMSE$) & $17.7272$ & $1.7396$ (Tốt nhất) & $2.7351$ \\
+        \hline
+        Công suất tối đa ($mW$) & $12.5$ & $7.5$ & $4.9$ \\
+        \hline
+        Giao thức kết nối & Single-wire & Single-wire & I2C \\
+        \hline
+    \end{tabular}
+    \caption{So sánh các chỉ số đo lường giữa DHT20 và các cảm biến khác}
+    \label{tab:dht_comparison}
+\end{table}
+
+\paragraph{Kết luận}
+
+Với đặc tính kỹ thuật đáp ứng yêu cầu của tiêu chuẩn ISO 7726 về đo lường nhiệt độ, DHT20 là sự thay thế hoàn hảo cho DHT11 trong các ứng dụng đòi hỏi độ tin cậy cao. Việc sử dụng phương trình hồi quy tuyến tính đơn giản có thể giúp hiệu chỉnh dữ liệu từ DHT20 tiệm cận sát với các thiết bị tham chiếu chuyên dụng, nâng cao độ chính xác cho toàn hệ thống.
+
+\subsubsection{Triển khai và Code}
+
+Hệ thống được lập trình để ánh xạ giá trị độ ẩm tương đối ($RH$) đọc từ cảm biến DHT20 sang màu sắc của đèn NeoLED theo ba dải trạng thái chính. Cách thiết kế này giúp người dùng quan sát nhanh mức độ ẩm môi trường mà không cần đọc trực tiếp giá trị số trên màn hình.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \textbf{Dải độ ẩm ($RH$)} & \textbf{Màu sắc NeoLED} & \textbf{Ý nghĩa trạng thái} \\
+        \hline
+        $< 30\%$ & Đỏ (Red) & Độ ẩm thấp, khô hạn \\
+        \hline
+        $30\% - 60\%$ & Vàng (Yellow) & Độ ẩm trung bình \\
+        \hline
+        $> 60\%$ & Xanh lá (Green) & Độ ẩm cao, ẩm ướt \\
+        \hline
+    \end{tabular}
+    \caption{Quy tắc ánh xạ độ ẩm tương đối sang màu NeoLED}
+    \label{tab:rh_to_neoled_mapping}
+\end{table}
+
+\paragraph{Lý do thiết lập các ngưỡng độ ẩm}
+
+\begin{itemize}
+    \item \textbf{$< 30\%$ là màu đỏ:} Độ ẩm dưới $30\%$ được xem là rất khô, có thể gây kích ứng da, khô mắt và ảnh hưởng đến đường hô hấp. Màu đỏ đóng vai trò cảnh báo nguy hiểm, nhắc người dùng cần bổ sung ẩm kịp thời.
+    \item \textbf{$30\% - 60\%$ là màu vàng:} Đây là dải chuyển tiếp. Mặc dù dải lý tưởng thường nằm trong khoảng $40\% - 60\%$, ngưỡng $30\% - 60\%$ được đặt màu vàng để biểu thị trạng thái cần chú ý hoặc bình thường.
+    \item \textbf{$> 60\%$ là màu xanh lá:} Trong các ứng dụng như nhà kính, trồng cây nhiệt đới hoặc bảo quản vật liệu cần độ ẩm cao, mức trên $60\%$ được xem là trạng thái tốt và đủ nước. Nếu áp dụng cho sinh hoạt gia đình, ngưỡng này có thể cần hiệu chỉnh tùy mục đích sử dụng.
+\end{itemize}
+
+\paragraph{Ưu điểm kỹ thuật của hệ thống}
+
+\begin{itemize}
+    \item \textbf{Độ tin cậy cao:} DHT20 đáp ứng các yêu cầu đo lường môi trường theo tiêu chuẩn ISO 7726.
+    \item \textbf{Tiết kiệm năng lượng:} Cảm biến DHT20 có công suất tiêu thụ tối đa chỉ $4.9\text{ mW}$ ($0.98\text{ mA}$ tại $5\text{ V}$), phù hợp với thiết bị IoT chạy pin.
+    \item \textbf{Tính tuyến tính tốt:} So với các cảm biến giá rẻ thế hệ cũ, DHT20 cho quan hệ đo lường ổn định hơn, giúp màu sắc hiển thị trên NeoLED phản ánh rõ hơn biến thiên độ ẩm.
+\end{itemize}
+
+\paragraph{Mã nguồn triển khai}
+
+Đoạn mã dưới đây được tách thành hai file riêng để dễ bảo trì và đọc hơn. File header khai báo giao diện task, còn file source chứa logic điều khiển NeoLED theo giá trị $RH$ đọc từ DHT20.
+
+\paragraph{File header}
+
+\begin{lstlisting}[
+    language=C++,
+    basicstyle=\ttfamily\small,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    numbersep=6pt,
+    breaklines=true,
+    frame=single,
+    rulecolor=\color{blue!60!black},
+    backgroundcolor=\color{blue!3},
+    caption={Header của task NeoLED},
+    label={lst:task2_neoled_header}
+]
+#ifndef TASK_NEO_LED_H
+#define TASK_NEO_LED_H
+
+#include <Arduino.h>
+#include <Adafruit_NeoPixel.h>
+#include "global.h"
+
+#define NEOPIXEL_PIN 45
+#define LED_COUNT 1
+
+void TaskNEOLED(void *pvParameters);
+
+#endif // TASK_NEO_LED_H
+\end{lstlisting}
+
+\paragraph{File source}
+
+\begin{lstlisting}[
+    language=C++,
+    basicstyle=\ttfamily\small,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    numbersep=6pt,
+    breaklines=true,
+    frame=single,
+    rulecolor=\color{blue!60!black},
+    backgroundcolor=\color{blue!3},
+    caption={Triển khai task NeoLED điều khiển màu đèn theo độ ẩm},
+    label={lst:task2_neoled_source}
+]
+
+#include "task_neo_led.h"
+
+void TaskNEOLED(void *pvParameters) {
+    Adafruit_NeoPixel strip(LED_COUNT, NEOPIXEL_PIN, NEO_GRB + NEO_KHZ800);
+    strip.begin();
+    strip.clear();
+    strip.show(); // Initialize all pixels to 'off'
+
+    while(1) {
+        xSemaphoreTake(xBinarySemaphoreTemp_Humi, portMAX_DELAY); // Wait for temperature and humidity data to be available
+        if(glob_humidity < 30){
+            strip.setPixelColor(0, strip.Color(100, 0, 0)); // Red
+            strip.show();
+        } else if(glob_humidity >= 30 && glob_humidity < 60){
+            strip.setPixelColor(0, strip.Color(100, 100, 0)); // Yellow
+            strip.show();
+        } else {
+            strip.setPixelColor(0, strip.Color(0, 100, 0)); // Green
+            strip.show();
+        }
+    }
+}
+\end{lstlisting}
+
+Mã nguồn trên thể hiện đúng logic ánh xạ đã mô tả: $RH < 30\%$ thì NeoLED sáng đỏ, $30\% - 60\%$ thì vàng, và trên $60\%$ thì xanh lá. Việc tách thành hai file riêng giúp cấu trúc dự án rõ ràng hơn và thuận tiện khi mở rộng thêm các trạng thái hiển thị khác.
+

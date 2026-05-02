@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.10.15)  12 APR 2026 14:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.10.15)  29 APR 2026 16:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**d:/LogicDesignProjectReport-main/LogicDesignProjectReport-main/main.tex
-(d:/LogicDesignProjectReport-main/LogicDesignProjectReport-main/main.tex
+**"c:/Users/MINH HUNG/Documents/HK252/Develop IOT Application/Develop_IOT_Applications_Report/Develop_IOT_Applications_Report/main.tex"
+(c:/Users/MINH HUNG/Documents/HK252/Develop IOT Application/Develop_IOT_Applications_Report/Develop_IOT_Applications_Report/main.tex
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-09-02>
 (c:/texlive/2025/texmf-dist/tex/latex/base/article.cls
@@ -1337,7 +1337,7 @@ Package hyperref Info: Link coloring OFF on input line 222.
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
-<Pictures/hcmut.png, id=191, 514.3215pt x 491.9178pt>
+<Pictures/hcmut.png, id=207, 514.3215pt x 491.9178pt>
 File: Pictures/hcmut.png Graphic file (type png)
 <use Pictures/hcmut.png>
 Package pdftex.def Info: Pictures/hcmut.png  used on input line 255.
@@ -1367,10 +1367,35 @@ Package pdftex.def Info: Pictures/hcmut.png  used on input line 334.
 [1
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 346--369
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 346--369
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 346--369
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 346--369
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 346--369
+
+ []
+
+
 
 File: Pictures/hcmut.png Graphic file (type png)
 <use Pictures/hcmut.png>
-Package pdftex.def Info: Pictures/hcmut.png  used on input line 356.
+Package pdftex.def Info: Pictures/hcmut.png  used on input line 381.
 (pdftex.def)             Requested size: 14.87177pt x 14.22636pt.
 [2
 
@@ -1378,10 +1403,10 @@ Package pdftex.def Info: Pictures/hcmut.png  used on input line 356.
 ] (./main.toc
 
 Package babel Info: 'vietnamese' activates 'vietnamese' shorthands.
-(babel)             Reported on input line 31.
+(babel)             Reported on input line 51.
 File: Pictures/hcmut.png Graphic file (type png)
 <use Pictures/hcmut.png>
-Package pdftex.def Info: Pictures/hcmut.png  used on input line 31.
+Package pdftex.def Info: Pictures/hcmut.png  used on input line 51.
 (pdftex.def)             Requested size: 14.87177pt x 14.22636pt.
 [3
 
@@ -1393,62 +1418,162 @@ Package pdftex.def Info: Pictures/hcmut.png  used on input line 31.
 
 File: Pictures/hcmut.png Graphic file (type png)
 <use Pictures/hcmut.png>
-Package pdftex.def Info: Pictures/hcmut.png  used on input line 361.
+Package pdftex.def Info: Pictures/hcmut.png  used on input line 386.
 (pdftex.def)             Requested size: 14.87177pt x 14.22636pt.
 [4] (./Chapters/1_Introduction.tex
 
 File: Pictures/hcmut.png Graphic file (type png)
 <use Pictures/hcmut.png>
-Package pdftex.def Info: Pictures/hcmut.png  used on input line 10.
+Package pdftex.def Info: Pictures/hcmut.png  used on input line 18.
 (pdftex.def)             Requested size: 14.87177pt x 14.22636pt.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.10 \newpage
-              [1]) (./Chapters/2_TheoryAndTools.tex
+l.18 \newpage
+              [1{c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]) (./Chapters/2_TheoryAndTools.tex (./Chapters/2_TheoryAndTools/Task1.tex) (./Chapters/2_TheoryAndTools/Task2.tex
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+
+File: Pictures/hcmut.png Graphic file (type png)
+<use Pictures/hcmut.png>
+Package pdftex.def Info: Pictures/hcmut.png  used on input line 59.
+(pdftex.def)             Requested size: 14.87177pt x 14.22636pt.
+[2]
+
+File: Pictures/hcmut.png Graphic file (type png)
+<use Pictures/hcmut.png>
+Package pdftex.def Info: Pictures/hcmut.png  used on input line 91.
+(pdftex.def)             Requested size: 14.87177pt x 14.22636pt.
+[3] (c:/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2024/09/23 1.10c listings language file
+) (c:/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2024/09/23 1.10c listings language file
+) (c:/texlive/2025/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
+)
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 111.
+LaTeX Font Info:    Trying to load font information for T5+cmtt on input line 111.
+ (c:/texlive/2025/texmf-dist/tex/latex/vntex/t5cmtt.fd
+File: t5cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `T5/cmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `T5/cmtt/m/n' tried instead on input line 112.
+
+
+File: Pictures/hcmut.png Graphic file (type png)
+<use Pictures/hcmut.png>
+Package pdftex.def Info: Pictures/hcmut.png  used on input line 167.
+(pdftex.def)             Requested size: 14.87177pt x 14.22636pt.
+[4]) (./Chapters/2_TheoryAndTools/Task3.tex) (./Chapters/2_TheoryAndTools/Task4.tex
+<Pictures/Task4/STA_mode.png, id=362, 538.01pt x 310.15875pt>
+File: Pictures/Task4/STA_mode.png Graphic file (type png)
+<use Pictures/Task4/STA_mode.png>
+Package pdftex.def Info: Pictures/Task4/STA_mode.png  used on input line 35.
+(pdftex.def)             Requested size: 386.95897pt x 223.08223pt.
+
+
+File: Pictures/hcmut.png Graphic file (type png)
+<use Pictures/hcmut.png>
+Package pdftex.def Info: Pictures/hcmut.png  used on input line 42.
+(pdftex.def)             Requested size: 14.87177pt x 14.22636pt.
+[5 <./Pictures/Task4/STA_mode.png>]
+<Pictures/Task4/AP_mode.png, id=375, 524.45938pt x 291.0875pt>
+File: Pictures/Task4/AP_mode.png Graphic file (type png)
+<use Pictures/Task4/AP_mode.png>
+Package pdftex.def Info: Pictures/Task4/AP_mode.png  used on input line 54.
+(pdftex.def)             Requested size: 386.95897pt x 214.77954pt.
+
+
+File: Pictures/hcmut.png Graphic file (type png)
+<use Pictures/hcmut.png>
+Package pdftex.def Info: Pictures/hcmut.png  used on input line 101.
+(pdftex.def)             Requested size: 14.87177pt x 14.22636pt.
+[6 <./Pictures/Task4/AP_mode.png>]
+
+File: Pictures/hcmut.png Graphic file (type png)
+<use Pictures/hcmut.png>
+Package pdftex.def Info: Pictures/hcmut.png  used on input line 178.
+(pdftex.def)             Requested size: 14.87177pt x 14.22636pt.
+[7]
+Underfull \hbox (badness 7362) in paragraph at lines 229--230
+[]|\T5/cmr/m/n/12 Tr¤ng th¡i t¤m thíi khi vøa gåi
+ []
+
+
+
+File: Pictures/hcmut.png Graphic file (type png)
+<use Pictures/hcmut.png>
+Package pdftex.def Info: Pictures/hcmut.png  used on input line 258.
+(pdftex.def)             Requested size: 14.87177pt x 14.22636pt.
+[8]
+<Pictures/Task4/Disconnected.png, id=427, 540.51938pt x 297.11pt>
+File: Pictures/Task4/Disconnected.png Graphic file (type png)
+<use Pictures/Task4/Disconnected.png>
+Package pdftex.def Info: Pictures/Task4/Disconnected.png  used on input line 264.
+(pdftex.def)             Requested size: 386.95897pt x 212.70857pt.
+
+Overfull \hbox (20.72682pt too wide) in paragraph at lines 335--396
+ [][] 
+ []
+
+
+
+File: Pictures/hcmut.png Graphic file (type png)
+<use Pictures/hcmut.png>
+Package pdftex.def Info: Pictures/hcmut.png  used on input line 397.
+(pdftex.def)             Requested size: 14.87177pt x 14.22636pt.
+[9 <./Pictures/Task4/Disconnected.png>]) (./Chapters/2_TheoryAndTools/Task5.tex) (./Chapters/2_TheoryAndTools/Task6.tex)
+
+File: Pictures/hcmut.png Graphic file (type png)
+<use Pictures/hcmut.png>
+Package pdftex.def Info: Pictures/hcmut.png  used on input line 10.
+(pdftex.def)             Requested size: 14.87177pt x 14.22636pt.
+[10]
+
+File: Pictures/hcmut.png Graphic file (type png)
+<use Pictures/hcmut.png>
+Package pdftex.def Info: Pictures/hcmut.png  used on input line 10.
+(pdftex.def)             Requested size: 14.87177pt x 14.22636pt.
+[11]) (./Chapters/3_SystemDesign.tex
 
 File: Pictures/hcmut.png Graphic file (type png)
 <use Pictures/hcmut.png>
 Package pdftex.def Info: Pictures/hcmut.png  used on input line 15.
 (pdftex.def)             Requested size: 14.87177pt x 14.22636pt.
-[2]) (./Chapters/3_SystemDesign.tex
-
-File: Pictures/hcmut.png Graphic file (type png)
-<use Pictures/hcmut.png>
-Package pdftex.def Info: Pictures/hcmut.png  used on input line 15.
-(pdftex.def)             Requested size: 14.87177pt x 14.22636pt.
-[3]) (./Chapters/4_SystemImplementation.tex
+[12]) (./Chapters/4_SystemImplementation.tex
 
 File: Pictures/hcmut.png Graphic file (type png)
 <use Pictures/hcmut.png>
 Package pdftex.def Info: Pictures/hcmut.png  used on input line 9.
 (pdftex.def)             Requested size: 14.87177pt x 14.22636pt.
-[4]) (./Chapters/5_Testing.tex
+[13]) (./Chapters/5_Testing.tex
 
 File: Pictures/hcmut.png Graphic file (type png)
 <use Pictures/hcmut.png>
 Package pdftex.def Info: Pictures/hcmut.png  used on input line 11.
 (pdftex.def)             Requested size: 14.87177pt x 14.22636pt.
-[5]) (./Chapters/6_ConclusionAndDiscussion.tex
+[14]) (./Chapters/6_ConclusionAndDiscussion.tex
 
 File: Pictures/hcmut.png Graphic file (type png)
 <use Pictures/hcmut.png>
 Package pdftex.def Info: Pictures/hcmut.png  used on input line 11.
 (pdftex.def)             Requested size: 14.87177pt x 14.22636pt.
-[6]
+[15]
 
 File: Pictures/hcmut.png Graphic file (type png)
 <use Pictures/hcmut.png>
 Package pdftex.def Info: Pictures/hcmut.png  used on input line 22.
 (pdftex.def)             Requested size: 14.87177pt x 14.22636pt.
-[7])
+[16])
 
 File: Pictures/hcmut.png Graphic file (type png)
 <use Pictures/hcmut.png>
-Package pdftex.def Info: Pictures/hcmut.png  used on input line 385.
+Package pdftex.def Info: Pictures/hcmut.png  used on input line 410.
 (pdftex.def)             Requested size: 14.87177pt x 14.22636pt.
-[8] 
+[17] 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
 (./main.aux)
  ***********
@@ -1456,21 +1581,21 @@ LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-09-02>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 472E1EE894BF292CED3944A70DE4A6C5;8004.
+(rerunfilecheck)             Checksum: 7BD7336467D5231D7805F6A474B5689D;8718.
  ) 
 Here is how much of TeX's memory you used:
- 31838 strings out of 467748
- 626867 string characters out of 5431137
- 1049935 words of memory out of 5000000
- 59953 multiletter control sequences out of 15000+600000
- 646335 words of font info for 73 fonts, out of 8000000 for 9000
+ 32603 strings out of 467748
+ 637328 string characters out of 5431137
+ 1417182 words of memory out of 5000000
+ 60556 multiletter control sequences out of 15000+600000
+ 649413 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 116i,17n,121p,522b,625s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2025/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/vntex/vnr/vnr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/vntex/vnr/vnr12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/vntex/vnr/vnr17.pfb><c:/texlive/2025/texmf-dist/fonts/type1/vntex/vnr/vnr8.pfb>
-Output written on main.pdf (13 pages, 174491 bytes).
+ 116i,17n,121p,978b,2073s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2025/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/vntex/vnr/vnitt10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/vntex/vnr/vnr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/vntex/vnr/vnr12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/vntex/vnr/vnr17.pfb><c:/texlive/2025/texmf-dist/fonts/type1/vntex/vnr/vnr6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/vntex/vnr/vnr8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/vntex/vnr/vnti12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/vntex/vnr/vntt10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/vntex/vnr/vntt12.pfb>
+Output written on main.pdf (22 pages, 661232 bytes).
 PDF statistics:
- 341 PDF objects out of 1000 (max. 8388607)
- 287 compressed objects within 3 object streams
- 54 named destinations out of 1000 (max. 500000)
- 458 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 614 PDF objects out of 1000 (max. 8388607)
+ 518 compressed objects within 6 object streams
+ 180 named destinations out of 1000 (max. 500000)
+ 505 words of extra memory for PDF output out of 10000 (max. 10000000)
 
